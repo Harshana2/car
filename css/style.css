@@ -1022,12 +1022,12 @@ a:focus {
 .contact_section .form_container .form-row .form-group .button-group .btn {
   width: 100%;
   height: 30px;
-  padding: 12px;
-  font-size: 16px;
+  padding-left: 15px;
+  font-size: 15px;
   background-color: #ffffff;
   color: #565554;
   border: 1px solid #003471;
-  border-radius: 0px;
+  border-radius: 5px;
   text-align: left;
   display: flex;
   justify-content:left;
@@ -1081,12 +1081,13 @@ color: #ffffff;
 }
 /* Align the form control input fields */
 .contact_section .form_container .form-control {
-  height: 45px; /* Make sure all form controls have the same height */
+  height: 30px; /* Make sure all form controls have the same height */
   padding-left: 15px;
   font-size: 16px;
   border-radius: 5px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 }
+
 
 
 /* Placeholder styles */
@@ -1123,18 +1124,7 @@ color: #ffffff;
   padding: 45px;
 }
 
-.contact_section .form_container .form-control {
-  width: 100%;
-  border: none;
-  height: 30px;
-  margin-bottom: 15px;
-  padding-left: 15px;
-  outline: none;
-  color: #101010;
-  -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
-  border-radius: 0;
-}
+
 
 
 .contact_section .form_container .form-control::-webkit-input-placeholder {
@@ -1156,6 +1146,7 @@ color: #ffffff;
 
 .contact_section .form_container .form-control.message-box {
   height: 50px;
+  margin-top: 15px;
 }
 
 .contact_section .form_container .btn_box {
@@ -1585,10 +1576,7 @@ color: #ffffff;
 
 .ccontainer {
   width: 100%;
-  padding-right: 50px;
-  padding-left: 50px;
-  margin-right: auto;
-  margin-left: auto;
+
 }
 
 /* Styling the heading container */

@@ -1,3 +1,53 @@
+//get Parameter
+function getQueryParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    quotationId: params.get('quotation_id'),
+    name: params.get('name'),
+    currency: params.get('currency'),
+    amount: params.get('amount')
+  };
+}
+
+// When the page loads, populate the form fields with the URL parameters
+window.onload = function() {
+  const queryParams = getQueryParams();
+
+  // Fill form fields with the retrieved data
+  if (queryParams.quotationId) document.getElementById('quotation-id').value = queryParams.quotationId;
+  if (queryParams.name) document.getElementById('name').value = queryParams.name;
+  if (queryParams.currency) document.getElementById('currency-select').value = queryParams.currency;
+  if (queryParams.amount) document.getElementById('amount').value = queryParams.amount;
+};
+
+// symbol
+function updateCurrencySymbol() {
+  const currencySelect = document.getElementById('currency-select');
+  const currencyIcon = document.getElementById('currency-icon');
+  const selectedCurrency = currencySelect.options[currencySelect.selectedIndex];
+  const symbol = selectedCurrency.getAttribute('data-symbol');
+
+  // Update the currency symbol
+  currencyIcon.textContent = symbol;
+
+  // Optionally, update the placeholder to reflect the selected currency
+  document.getElementById('amount').placeholder = `Enter amount in ${selectedCurrency.value}`;
+}
+
+// Format the input as currency on input
+document.getElementById('amount').addEventListener('input', function(event) {
+  let value = event.target.value.replace(/[^\d.]/g, ''); // Remove non-numeric characters
+
+  // Add commas and decimal formatting
+  value = parseFloat(value).toFixed(2); // Round to 2 decimals (for cents)
+
+  // Set the formatted value back to the input field
+  event.target.value = value;
+});
+
+// Initialize the currency symbol on page load
+window.onload = updateCurrencySymbol;
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
   const pickupLocation = document.getElementById("destination");
@@ -255,5 +305,4 @@ document.getElementById('payment-form').addEventListener('submit', function(even
   // For now, just redirect to a payment gateway URL (this should be replaced with actual payment integration URL)
   window.location.href = "https://www.examplepaymentgateway.com/pay?name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&phone=" + encodeURIComponent(phone);
 });
-
 

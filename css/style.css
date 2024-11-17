@@ -43,8 +43,9 @@ body {
 }
 
 .heading_container h2 {
-  position: relative;
+  position:relative;
   font-weight: bold;
+  text-align: left;
 }
 
 .heading_container h2 span {
@@ -206,6 +207,7 @@ a:focus {
   font-weight: bold;
   font-size: 24px;
 }
+
 
 .navbar-brand span {
   color: #da7426;
@@ -1438,11 +1440,12 @@ color: #ffffff;
   position: relative;
   background-color: #ffffff;
   text-align: center;
+  height: 10px;
 }
 
 .footer_section p {
   color: #252525;
-  padding: 25px 0;
+  padding: 5px 0;
   margin: 0;
 }
 

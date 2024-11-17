@@ -92,55 +92,55 @@
           <div class="text-container">
             <img src="images/Token.png" alt="Luxury Car Rental" class="payment-image" /> <!-- Add Image here -->
             <h1 class="main-heading">Experience the Luxury of Seamless <span> Travel with Diamond Athuruga.</span></h1>
-            <p class="sub-heading">We don’t just offer car rentals; we provide unforgettable travel experiences that are tailored to your journey. Whether you're exploring Sri Lanka's stunning landscapes or traveling for business, our service ensures your trip is comfortable, safe, and enjoyable.</p>
+            <p class="sub-heading">Effortlessly complete your payment and embark on an unforgettable journey of comfort and elegance. Your adventure awaits!</p>
           </div>
         </div>
   
         <!-- Right side: Payment Form -->
         <div class="payment-right">
           <div class="form_container">
-              <form action="">
-                  <!-- Quotation ID field -->
-                  <div class="form-row">
-                      <div class="form-group col">
-                          <input type="text" class="form-control" placeholder="Quotation ID" required />
-                      </div>
-                  </div>
-                  
-                  <!-- Name field -->
-                  <div class="form-row">
-                      <div class="form-group col">
-                          <input type="text" class="form-control" placeholder="Your Name" required />
-                      </div>
-                  </div>
-                  
-                  <!-- Currency selection -->
-                  <div class="form-row">
-                  
-                    <div class="form-group col">
-                      <select id="currency-select" class="currency-dropdown">
-                          <option value="GBP">GBP - British Pound</option>
-                          <option value="USD">USD - US Dollar</option>
-                          <option value="LKR">LKR - Sri Lankan Rupee</option>
-                          <option value="EUR">EUR - Euro</option>
-                      </select>
-
-                    </div>
-                    <div class="form-group col">
-                      <input type="text" class="form-control" placeholder="Amount" required />
-                  </div>
-                  </div>
-                
-                  <!-- Optional Image -->
-                  <img src="images/payment-methods-epicerie-ludo.png" alt="Luxury Car Rental" class="payment-image-sampath" />
-                  
-                  <!-- Submit Button -->
-                  <div class="btn_box">
-                      <button type="submit">
-                          Submit Payment
-                      </button>
-                  </div>
-              </form>
+            <form action="">
+              <!-- Quotation ID field -->
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" id="quotation-id" class="form-control" placeholder="Quotation ID" required />
+                </div>
+              </div>
+          
+              <!-- Name field -->
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" id="name" class="form-control" placeholder="Your Name" required />
+                </div>
+              </div>
+          
+              <!-- Currency selection -->
+              <div class="form-row">
+                <div class="form-group col">
+                  <select id="currency-select" class="currency-dropdown" onchange="updateCurrencySymbol()">
+                    <option value="USD" data-symbol="$">USD - US Dollar</option>
+                    <option value="GBP" data-symbol="£">GBP - British Pound</option>
+                    <option value="LKR" data-symbol="Rs">LKR - Sri Lankan Rupee</option>
+                    <option value="EUR" data-symbol="€">EUR - Euro</option>
+                  </select>
+                </div>
+                <div class="form-group col currency-input-container">
+                  <!-- Currency Input with Symbol -->
+                  <span id="currency-icon" class="currency-icon">$</span>
+                  <input type="text" id="amount" class="currency-input" placeholder="Amount" required />
+                </div>
+              </div>
+          
+              <!-- Optional Image -->
+              <img src="images/payment-methods-epicerie-ludo.png" alt="Luxury Car Rental" class="payment-image-sampath" />
+          
+              <!-- Submit Button -->
+              <div class="btn_box">
+                <button type="submit">
+                  Submit Payment
+                </button>
+              </div>
+            </form>
           </div>
       </div>
       
@@ -252,7 +252,7 @@
             <div class="col-md-3">
               <div class="info_form ">
                 <form action="">
-                  <input type="email" placeholder="Enter Your Email" />
+                  <input type="email" placeholder="Enter Your Email" required/>
                   <button>
                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                   </button>
